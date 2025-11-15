@@ -3,162 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Events</title>
+    <title>Annual Function Navbar</title>
 
     <style>
-        * {
+         {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
-        /* NAVBAR */
-        nav {
-            background: #0f172a;
-            color: white;
+        body {
+            background: #f3f5fa;
+        }
+
+       
+        .navbar {
+            width: 100%;
+            background: #4b49e0;
             padding: 15px 20px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            position: relative;
+            justify-content: space-between;
+            color: #fff;
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
+        .navbar .logo {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
-        nav ul {
-            list-style: none;
+        
+        .nav-links {
             display: flex;
-            gap: 20px;
+            gap: 25px;
         }
 
-        nav ul li a {
-            color: white;
+        .nav-links a {
             text-decoration: none;
-            font-size: 18px;
+            color: #fff;
+            font-weight: 600;
+            transition: 0.2s;
         }
 
-        /* HAMBURGER (checkbox) */
+        .nav-links a:hover {
+            color: #ffd369;
+        }
+
+       
         #menu-toggle {
             display: none;
         }
 
-        .menu-icon {
+        .hamburger {
             display: none;
-            font-size: 30px;
+            flex-direction: column;
             cursor: pointer;
         }
 
-        /* MOBILE RESPONSIVE */
-        @media(max-width: 768px){
-            nav ul {
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background: #fff;
+            margin: 4px 0;
+            transition: 0.3s;
+        }
+
+       
+         (max-width: 768px) {
+            .nav-links {
                 position: absolute;
-                top: 60px;
+                top: 65px;
                 left: 0;
                 width: 100%;
-                background: #1e293b;
+                background: #4b49e0;
                 flex-direction: column;
                 text-align: center;
+                gap: 15px;
+                padding: 20px 0;
                 display: none;
-                padding: 15px 0;
             }
 
-            /* show menu when checkbox is checked */
-            #menu-toggle:checked + .menu-icon + ul {
-                display: block;
+            
+            #menu-toggle:checked ~ .nav-links {
+                display: flex;
             }
 
-            .menu-icon {
-                display: block;
+            .hamburger {
+                display: flex;
             }
         }
 
-        /* EVENTS SECTION */
-        .events-section {
-            padding: 40px 20px;
-            background: #f1f5f9;
-        }
-
-        .events-section h2 {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 25px;
-            color: #0f172a;
-        }
-
-        .event-container {
+     
+        .info-section {
             max-width: 900px;
-            margin: auto;
-            display: grid;
-            gap: 20px;
-        }
-
-        .event-card {
-            background: white;
-            padding: 20px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 25px;
             border-radius: 10px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        .event-card h3 {
-            margin-bottom: 8px;
-            color: #1e293b;
+        .info-section h2 {
+            color: #4b49e0;
+            margin-bottom: 10px;
         }
 
-        .event-card p {
-            color: #475569;
+        .info-section p {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.6;
         }
-
-        .event-card span {
-            display: block;
-            margin-top: 5px;
-            color: #64748b;
-            font-size: 14px;
-        }
-
     </style>
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <nav>
-        <div class="logo">MyCollege</div>
+   
+    <header class="navbar">
+        <div class="logo">Annual Function</div>
 
-        <!-- Checkbox Hack -->
+      
         <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
 
-        <label for="menu-toggle" class="menu-icon">☰</label>
-
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Departments</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-
-
-    <!-- EVENTS SECTION -->
-    <section class="events-section">
-        <h2>Upcoming College Events</h2>
-
-        <div class="event-container">
-
-            <div class="event-card">
-                <h3>Tech Fest 2025</h3>
-                <p>Robotics, Coding Contest, Project Expo & Tech Talks.</p>
-                <span>Date: 15 December 2025</span>
-                <span>Venue: Main Auditorium</span>
-            </div>
-
-            
         
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Events</a>
+            <a href="#">Gallery</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
 
-        </div>
+    
+    <section class="info-section">
+        <h2>About Annual Function</h2>
+        <p>
+            Our college Annual Function is a grand celebration that brings together 
+            students, teachers, and parents to showcase talents, achievements, and 
+            cultural diversity. The event includes exciting performances such as 
+            dance, singing, drama, and various competitions. It is a joyful day filled 
+            with creativity, entertainment, and unforgettable memories for everyone.
+        </p>
     </section>
 
 </body>
 </html>
+
+
+
